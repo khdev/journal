@@ -1,0 +1,77 @@
+
+"	S	D	N
+V	0	0	0	.o'anai		Shame, humiliation
+E	0	0	1	.o'unai		Distressed embarrassment
+V	0	0	2	.a'onai		Distress, anguish
+E	0	1	2	.u'inai		Irritation, frustration
+E	0	1	0	.u'onai		Shameful fear
+F	0	1	1	.a'ucu'i	Disinterest
+E	0	2	1	.a'e		Panic
+V	0	2	2	.o'onai		Anger, rage
+V	0	2	0	.ii		Fear, terror
+E	1	2	0	.u'e		Wonder: enjoyment in fear
+F	1	2	1	.io/.i'u	Respect in wonder/mystery
+E	1	2	2	.o'inai		Passionate anger
+E	1	0	2	.a'anai		Shock, avoiding
+E	1	0	0	.o'unai		General disgust, withdrawal
+F	1	0	1	.ainai		Withdrawal, active disinterest
+C	1	1	1	.uanai		Resp/annoy/passive: confused
+F	1	1	2	.i'ocu'i	Disappreciation, miffed
+F	1	1	0	.o'ecu'i	*Detachment/helplessness
+E	2	1	0	.o'o		Disgusted enjoyment/patience
+F	2	1	1	.uo		Relief/completion
+E	2	1	2	.u'anai		Discovery: exc. surprise
+V	2	2	2	.a'u		Interest, excitement
+V	2	2	0	.ui		Enjoyment, joy
+E	2	2	1	.oinai		Pleasure, exhilaration
+E	2	0	1	.i'enai		Disapproval: shock/disgust
+V	2	0	2	.ue		Surprise
+V	2	0	0	.a'unai		Contempt, disgust
+"
+	return str(now.tm_year)+'-'+str(now.tm_mon)+'-'+str(now.tm_mday)+' '+str(now.tm_hour).zfill(2)+':'+str(now.tm_min).zfill(2)+':'+str(now.tm_sec).zfill(2)
+Title:
+
+%%
+2013-10-04 20:21:22
+0 0 2	.o'unai
+Birthday 2013 (1 1 -2)
+On what ought to be the happiest day of my year, I find myself deeply distressed. Yet another victory for entropy awaits for one of the oathbreakers. I believe this is the first time I have felt such unhappiness since 2007-2008. May their union be short-lived and swift to end.
+%%
+
+Timestamp
+Emotion ID, jbo attitudinal
+Title
+Entry
+
+
+Modification
+
+Encryption
+	
+
+Decryption
+
+Viewer: IMPLEMENTED (in bad code)
+	Seek until fh.read(2)=='%%'
+		Seek +1
+	sTimeS = fh.read(19)
+		Seek +1
+	i5HT = fh.read(1)
+		Seek +1
+	iDop = fh.read(1)
+		Seek +1
+	iNE = fh.read(1)
+		Seek +1
+	sJbo = fh.readline()
+		Seek +1
+	sTitle = fh.readline()
+		Seek +1
+	sEntry
+	while True:
+		sBuff = fh.readline()
+		if sBuff == "%%":
+			break
+		else:
+			sEntry += sBuff
+	
+		
